@@ -56,4 +56,4 @@ write.table(allData, "tidy_data.txt")
 # use package data.table to apply SD and mean functions to data and write result data into text file
 allDataTable <- data.table(allData)
 resultData <- allDataTable[, lapply(.SD, mean), by=c("subjectId", "activityData")]
-write.table(resultData, "result_tidy_data.txt")
+write.table(resultData, "result_tidy_data.txt", row.name=FALSE)
